@@ -1,4 +1,4 @@
-# SeqRipper
+# SeqRipper: Extract genes from GenBank mitochondrial genomes
 
 SeqRipper is a command-line tool that extracts specific genes from mitochondrial genomes using GenBank accession numbers. It reads annotation data directly from NCBI and outputs individual FASTA files for each gene-accession combination. SeqRipper directly interfaces with NCBI's API, so there is no need to wait for a separate database to update.
 
