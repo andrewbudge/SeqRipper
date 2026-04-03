@@ -1,17 +1,21 @@
 # SeqRipper
 
-SeqRipper is a program to extract genes from mitocondiral genomes in genbank format (.gb). SeqRipper is written in golang, and can be complied to a single binary with no depedencies. 
+Fast, concurrent tool for extracting genes from GenBank files. Written in Rust.
 
 ## Installation
 
 ```bash
-go install github.com/andrewbudge/seqripper@latest
+cargo install --git https://github.com/andrewbudge/SeqRipper.git
 ```
 
 Or build from source:
 ```bash
-go build -o seqripper seqripper.go
+git clone https://github.com/andrewbudge/SeqRipper.git
+cd SeqRipper
+cargo build --release
 ```
+
+The binary will be at `target/release/seqripper`.
 
 ## Usage
 
@@ -48,3 +52,7 @@ Handles multiple naming conventions (COI/COXI/COX1/cytochrome oxidase subunit 1)
 
 - Individual FASTA files: `<accession>_<gene>.fasta`
 - Log file: `seqripper_log.tsv`
+
+## Performance
+
+Processes 34 mitochondrial genomes in ~13ms using parallel processing via rayon.
